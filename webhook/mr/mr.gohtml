@@ -1,0 +1,53 @@
+{{define "open"}}
+    🎉 <b>New merge request for review</b>
+    -- -- -- --
+    Название:{{.Title}}
+    -- -- -- --
+    Описание: {{.Description}}
+    -- -- -- --
+    🏗️ <b>ProjectName</b>: {{.ProjectName}}
+    🌳 <b>{{.SourceBranch}}</b> ➜ <b>{{.TargetBranch}}</b>
+    🤖 <b>Author</b>: {{.Author}}
+    🙋 <b>Assignee</b>: {{.Reviewers}}
+{{end}}
+
+{{define "merge"}}
+    ✅ <b>Merge request is merged!</b>
+    -- -- -- --
+    {{.Title}}
+    -- -- -- --
+    {{.Description}}
+
+    -- -- -- --
+    🏗️ <b>ProjectName</b>: {{.ProjectName}}
+    🌳 <b>{{.SourceBranch}}</b> ➜ <b>{{.TargetBranch}}</b>
+    🤖 <b>Author</b>: {{.Author}}
+{{end}}
+
+
+{{define "close"}}
+    ❌ <b>Merge request closed</b>
+    -- -- -- --
+    {{.Title}}
+    -- -- -- --
+    {{.Description}}
+
+    -- -- -- --
+    🏗️ <b>ProjectName</b>: {{.ProjectName}}
+    🌳 <b>{{.SourceBranch}}</b> ➜ <b>{{.TargetBranch}}</b>
+    🤖 <b>Author</b>: {{.Author}}
+{{end}}
+
+
+{{define "default"}}
+    📢 <b>Merge request update ({{.Action}})</b>
+    -- -- -- --
+    {{.Title}}
+    -- -- -- --
+    {{.Description}}
+
+    -- -- -- --
+    🏗️ <b>ProjectName</b>: {{.ProjectName}}
+    🌳 <b>{{.SourceBranch}}</b> ➜ <b>{{.TargetBranch}}</b>
+    🤖 <b>Author</b>: {{.Author}}
+{{end}}

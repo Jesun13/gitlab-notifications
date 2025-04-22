@@ -4,9 +4,12 @@ type MergeRequestEvent struct {
 	ObjectKind string `json:"object_kind"`
 
 	ObjectAttributes struct {
-		Action string `json:"action"`
-		Title  string `json:"title"`
-		URL    string `json:"url"`
+		Action       string `json:"action"`
+		Title        string `json:"title"`
+		URL          string `json:"url"`
+		SourceBranch string `json:"source_branch"`
+		Description  string `json:"description"`
+		TargetBranch string `json:"target_branch"`
 	} `json:"object_attributes"`
 
 	User struct {

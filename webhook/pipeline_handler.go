@@ -32,7 +32,7 @@ func (p *PipelineHandler) HandleEvent(event map[string]interface{}, topicKey str
 	message = emoji + " " + message
 
 	// Отправка уведомления в Telegram
-	err := telegram.SendTelegramMessage(message, topicKey)
+	err := telegram.SendTelegramMessage(message, topicKey, nil)
 	if err != nil {
 		return err
 	}

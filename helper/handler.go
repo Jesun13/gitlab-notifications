@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"gitlab-notificatons/webhook"
+	"gitlab-notificatons/webhook/mr"
 	"net/http"
 )
 
@@ -21,7 +22,7 @@ func HandleWebhook(w http.ResponseWriter, r *http.Request) {
 
 	// Создаем диспетчер событий
 	dispatcher := NewEventDispatcher()
-	dispatcher.RegisterHandler("merge_request", &webhook.MergeRequestHandler{})
+	dispatcher.RegisterHandler("merge_request", &mr.MergeRequestHandler{})
 	dispatcher.RegisterHandler("pipeline", &webhook.PipelineHandler{})
 
 	// Распределяем событие
